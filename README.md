@@ -18,7 +18,6 @@ These tools are already installed on this machine. If you set up a new machine l
 
 - [Cursor](https://www.cursor.com/)
 - [Git](https://git-scm.com/)
-- [Python 3](https://www.python.org/) (used only to run a local preview server)
 - Xcode Command Line Tools (macOS): `xcode-select --install`
 - A GitHub account
 
@@ -26,7 +25,6 @@ Check your install in terminal:
 
 ```bash
 git --version
-python3 --version
 ```
 
 ## 3) Open and explore in Cursor
@@ -58,25 +56,18 @@ cd /path/to/LakeWords.github.io
 git pull
 ```
 
-## 5) Run the site locally (draft preview)
+## 5) Preview the site locally
 
-From the repo root:
+**Simplest:** open `docs/index.html` in Chrome (or any browser). The site is static HTML, CSS, and JS with relative paths, so navigation, styles, and images work from the file system.
+
+**Optional — local HTTP server:** only if you want URLs to look like production (`http://` instead of `file://`) or you are debugging something that behaves differently over `file://` (for example, form `fetch()` to external APIs). From the repo root:
 
 ```bash
 cd docs
 python3 -m http.server 8000
 ```
 
-Open this in your browser:
-
-`http://localhost:8000/docs/`
-
-Important:
-
-- Keep that terminal running while previewing.
-- Stop server with `Ctrl + C`.
-- If port 8000 is busy, use another port:
-  `python3 -m http.server 8001`
+Then open `http://localhost:8000/` (keep the terminal running; stop with `Ctrl+C`). If port 8000 is busy, pick another port, e.g. `python3 -m http.server 8001`.
 
 ## 6) Basic day-to-day workflow
 
@@ -86,7 +77,7 @@ Use this loop every time you work:
 2. Open **Source Control** (`Cmd+Shift+G`) and click **Sync/Pull** to get latest.
 3. Create a new branch from branch menu: `your-name/short-feature-name`.
 4. Make a small change and save.
-5. Preview in browser (`http://localhost:8000/docs/`).
+5. Preview in the browser (open `docs/index.html`, or use the optional local server from section 5).
 6. In **Source Control**, review changed files and stage with `+`.
 7. Enter commit message and click **Commit**.
 8. Click **Publish Branch** (first push) or **Sync Changes**.
@@ -152,7 +143,7 @@ Good prompt examples:
 ## 10) Common issues
 
 - **I changed code but browser looks the same**  
-  Hard refresh (`Cmd+Shift+R`) and confirm you are on the right local URL.
+  Hard refresh (`Cmd+Shift+R`) and confirm you are previewing the right file or URL.
 
 - **My branch says behind main**  
   Switch to `main`, pull, then update your branch.
@@ -192,11 +183,7 @@ git status
 git pull
 git checkout -b your-name/task-name
 
-# run draft site
-cd docs
-python3 -m http.server 8000
-
-# in another terminal at repo root, after edits
+# after edits (preview by opening docs/index.html in a browser)
 git add .
 git commit -m "Describe what changed"
 git push -u origin your-name/task-name
