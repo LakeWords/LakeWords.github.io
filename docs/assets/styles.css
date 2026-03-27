@@ -20,6 +20,11 @@ body {
 a { color: var(--fg); text-decoration: none; }
 a:hover, a:focus-visible { text-decoration: underline; }
 img { max-width: 100%; display: block; height: auto; }
+.launch-handbill {
+  max-width: 18rem;
+  margin: 0 auto 1.25rem;
+}
+.launch-handbill img { width: 100%; }
 
 .site-header {
   max-width: var(--max);
@@ -34,11 +39,30 @@ img { max-width: 100%; display: block; height: auto; }
   background: transparent;
   border: 0;
   color: var(--fg);
-  font-size: 1.35rem;
   cursor: pointer;
-  width: fit-content;
+  width: 2.5rem;
+  height: 2.5rem;
   padding: 0;
-  font-family: "Jost", Arial, sans-serif;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu-toggle:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 3px;
+}
+.menu-toggle-bars {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 1.4rem;
+  height: 1rem;
+}
+.menu-toggle-bars span {
+  display: block;
+  height: 2px;
+  background: currentColor;
+  border-radius: 1px;
 }
 .site-nav { display: none; }
 .site-nav.open {
