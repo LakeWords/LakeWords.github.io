@@ -107,6 +107,47 @@ main { min-height: 55vh; }
   font-weight: 400;
   text-transform: lowercase;
 }
+.home-bottom-tease {
+  padding-top: 0.5rem;
+  padding-bottom: 3rem;
+}
+.home-bottom-rule {
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  margin: 0 0 2.5rem;
+}
+.home-callout-heading {
+  margin: 0 0 1.5rem;
+  font-size: clamp(2.3rem, 6vw, 4.2rem);
+  font-weight: 400;
+  text-transform: lowercase;
+}
+.home-bottom-promo {
+  display: grid;
+  grid-template-columns: minmax(0, 32rem) 1fr;
+  gap: clamp(1.25rem, 4vw, var(--gap));
+  align-items: center;
+}
+.home-handbill-rail {
+  max-width: min(36rem, 100%);
+  margin-left: auto;
+  margin-right: 0;
+}
+.home-bottom-promo .home-handbill-rail {
+  margin-left: 0;
+  max-width: 100%;
+}
+.home-handbill-rail img {
+  width: 100%;
+}
+.home-bottom-copy p {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.2rem, 2.2vw, 1.45rem);
+  line-height: 1.45;
+}
+.home-bottom-copy .button {
+  margin-top: 0.25rem;
+}
 
 .columns {
   display: grid;
@@ -202,6 +243,10 @@ hr {
   .site-header { grid-template-columns: auto 1fr auto; }
   .site-title { justify-self: center; }
   .columns { grid-template-columns: 1fr; }
+  .home-bottom-promo {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
   .split-form { grid-template-columns: 1fr; }
   .site-footer { flex-direction: column; }
 }
