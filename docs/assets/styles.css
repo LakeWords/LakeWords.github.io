@@ -208,6 +208,10 @@ hr {
 
 
 .archive-content p { margin: 0 0 .65rem; }
+.archive-content .connect-intro {
+  margin-bottom: 1.5rem;
+  max-width: 42rem;
+}
 .archive-content h2,
 .archive-content h3,
 .archive-content h4,
