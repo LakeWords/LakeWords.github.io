@@ -240,12 +240,18 @@ hr {
 }
 
 @media (max-width: 900px) {
+  :root {
+    --gap: clamp(1.5rem, 6vw, 70px);
+  }
   .site-header { grid-template-columns: auto 1fr auto; }
   .site-title { justify-self: center; }
   .columns { grid-template-columns: 1fr; }
   .home-bottom-promo {
     grid-template-columns: 1fr;
     align-items: start;
+  }
+  .home-bottom-copy {
+    padding-bottom: 1.75rem;
   }
   .split-form { grid-template-columns: 1fr; }
   .site-footer { flex-direction: column; }
