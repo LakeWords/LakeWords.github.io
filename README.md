@@ -45,7 +45,7 @@ Tips for working efficiently:
 If you have not cloned yet:
 
 ```bash
-git clone <repo-url>
+git clone <https://github.com/LakeWords/LakeWords.github.io.git>
 cd LakeWords.github.io
 ```
 
